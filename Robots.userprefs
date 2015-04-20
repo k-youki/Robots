@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Player.cs">
+    <Files>
+      <File FileName="Assets\Script\Player.cs" Line="41" Column="39" />
+      <File FileName="C:\Users\YUKI\Dropbox\Unity Projects\SecondUnity\Assets\BlockController.cs" Line="11" Column="33" />
+      <File FileName="C:\Users\YUKI\Dropbox\Unity Projects\SecondUnity\Assets\RacketController.cs" Line="19" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,80 @@
+using UnityEngine;
+using System.Collections;
+
+public class Player : MonoBehaviour
+{
+	public float x = 0.0f;
+	public float y = 0.0f;
+
+	public float move = 2.5f;
+
+	public int right = 0;
+	public int left = 0;
+	public int up = 0;
+	public int down = 0;
+
+	public bool moveFlag = false;
+
+	GameObject[] enemyObj;
+	Manage manage;
+
+	// Use this for initialization
+	void Start () {
+		manage = GetComponent<Manage> ();
+		enemyObj = GameObject.FindGameObjectsWithTag("EnemyGroup");
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if (Input.GetKey (KeyCode.RightArrow)) {
+			if (++right == 1) {
+				x = move;
+				y = 0.0f;
+				moveFlag = true;
+			}
+		} else {
+				right = 0;
+		}
+
+		if (Input.GetKey (KeyCode.LeftArrow)) {
+			if (++left == 1) {
+				x = -move;
+				y = 0.0f;
+				moveFlag = true;
+			}
+		} else {
+			left = 0;
+		}
+
+		transform.Translate(x, 0, 0, Space.World);
+
+		if (Input.GetKey(KeyCode.UpArrow)) {
+			if (++up == 1) {
+				y = move;
+				x = 0.0f;
+				moveFlag = true;
+			}
+		} else {
+			up = 0;
+		}
+		
+		if (Input.GetKey(KeyCode.DownArrow)) {
+			if (++down == 1) {
+				y = -move;
+				x =  0.0f;
+				moveFlag = true;
+			}
+		} else {
+			down = 0;
+		}
+		
+		transform.Translate(0, y, 0, Space.World);
+
+		if(moveFlag == true) {
+			manage.EnemyMove (enemyObj);
+			moveFlag = false;
+		}
+
+		x = y = 0;
+	}
+}
