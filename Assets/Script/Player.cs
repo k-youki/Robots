@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 	public int stop = 0;
 
 	public bool moveFlag = false;
+	public bool movingFlag = false;
 
 	Manage manage;
 
@@ -98,14 +99,15 @@ public class Player : MonoBehaviour
 		iTween.MoveTo(gameObject, iTween.Hash("x", x*move, "y", y*move,
 		"time", 0.1f, "oncomplete", "CompleteMove", "oncompletetarget",
 		this.gameObject, "easetype", iTween.EaseType.easeInOutQuart));
+		moveFlag = true;
 	}
 
 	void CompleteMove()
 	{
-		moveFlag = true;
+
 	}
 
-	void JumpPlayer()
+	public void JumpPlayer()
 	{
 		x = Random.Range(-19, 20);
 		y = Random.Range(-19, 20);
